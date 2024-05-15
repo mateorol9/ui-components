@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  :root {
+    --primary-color: #1A2037;
+    --text-color: #e4e2e2;
+    --bg-color: #283151;
+  }
+  body {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: start;
+    
+    
+    font-family: 'Poppins', sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('https://i.postimg.cc/YSZd6HZs/wallpaper-3.webp');
+    
+   transition:  backdrop-filter .3s;
+  }
+  body:has(.nav:hover){
+    backdrop-filter: blur(5px) brightness(40%);
+    transition:  backdrop-filter .2s;
+  }
+  .nav {
+    width: max-content;
+    height: 90vh;
+    padding: 2rem 1.5rem;
+    border-radius: 1rem;
+    
+    background-color: var(--primary-color);
+    --grid-columnas-nav: max-content 0fr;
+  }
+  .nav:has(:hover), .nav:hover {
+    --grid-columnas-nav: max-content 1fr;
+  }
+  .nav__link {
+    text-decoration: none;
+    user-select: none;
+  }
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+    
+  .nav__item {
+    display: grid;
+    grid-template-columns: var(--grid-columnas-nav);
+    align-items: center;
+    
+    border-radius: 5px;
+    
+    color: var(--text-color);
+    transition: grid-template-columns .3s;
+  }
+  .nav__item:hover {
+    grid-template-columns: max-content 1fr;
+    
+    background-color: var(--bg-color);
+    cursor: pointer;
+    transition: grid-template-columns .2s;
+  }
+  .nav__link--down {
+    margin-block-start: auto;
+  }
+  .nav__item--user {
+    position: relative;
+    
+    margin-block-start: 10px;
+   
+    &::before {
+    content:"";
+    width: 100%;
+    height: 1px;
+    background-color: var(--text-color);
+    position: absolute;
+    top: -5px;
+  }
+  }
+  
+  .nav__show {
+    overflow: hidden;
+  }
+  .nav__figure {
+    padding: 1rem;
+  }
+  .nav__img {
+    width: 35px;
+  }
+  .nav__img--avatar {
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    
+  }
+  .nav__name--user {
+    padding-inline-end: 1rem;
+    white-space: nowrap;
+  }

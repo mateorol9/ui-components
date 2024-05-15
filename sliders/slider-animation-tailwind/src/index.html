@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <title>Componenete SLIDER con TailwindCSS</title>
+</head>
+<body>
+    <section class="w-[90%] mx-auto max-w-screen-lg overflow-hidden text-white rounded-lg mt-20 slider" id="slider">
+
+        <figure data-active class="relative w-full h-full aspect-video slider-childs">
+            <img src="./assets/pexels-iriser-1209751.webp" alt="slider1" class="w-full h-full block object-cover">
+
+             <div class="absolute inset-0 w-[90%] h-max mx-auto mt-auto space-y-4 py-8 hidden md:block" >
+                <h2 class="text-3xl font-bold">Imagen 1:</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, expedita quasi dolorem obcaecati cumque quidem officia modi fuga perferendis praesentium!</p>
+             </div>
+
+        </figure>
+        <figure  class="relative w-full h-full aspect-video slider-childs">
+            <img src="./assets/pexels-joonas-kaariainen-67364-240572 (1).webp" alt="slider2" class="w-full h-full block object-cover">
+
+             <div class="absolute inset-0 w-[90%] h-max mx-auto mt-auto space-y-4 py-8 hidden md:block" >
+                <h2 class="text-3xl font-bold">Imagen 2:</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, expedita quasi dolorem obcaecati cumque quidem officia modi fuga perferendis praesentium!</p>
+             </div>
+
+        </figure>
+        <figure class="relative w-full h-full aspect-video slider-childs">
+            <img src="./assets/pexels-rdne-8474492.webp" alt="slider3" class="w-full h-full block object-cover">
+
+             <div class="absolute inset-0 w-[90%] h-max mx-auto mt-auto space-y-4 py-8 hidden md:block" >
+                <h2 class="text-3xl font-bold">Imagen 3:</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, expedita quasi dolorem obcaecati cumque quidem officia modi fuga perferendis praesentium!</p>
+             </div>
+
+        </figure>
+        <button class="slider-prev bg-white rounded-full ml-4">
+            <img src="./assets/chevron-left.svg" alt="back" class="w-8 aspect-square md:w-10" data-button="prev">
+        </button>
+        <button class="slider-next bg-white rounded-full mr-4">
+            <img src="./assets/chevron-right.svg" alt="back" class="w-8 aspect-square md:w-10" data-button="next">
+        </button>
+   
+    </section>
+    <script src="./js/slider.js" defer></script>
+</body>
+</html>
