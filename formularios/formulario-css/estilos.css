@@ -1,0 +1,95 @@
+*, 
+::after,
+::before {
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --blanco: #fff;
+    --color-title: #9c999;
+    --color-subtitle: #9c9999;
+    --color-text: #6b6b6b;
+    --color-inputs: #6b6b6b;
+    --color-submit: #007bff;
+    --color-submit-hover: #567aea;
+}
+body {
+    height: 100vh;
+    background: linear-gradient(#a3c6fd, #b6dbf9);    
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+input {
+    font: inherit;
+}
+form {
+    margin: 40px auto;
+    padding: 3rem 1.5rem;
+    background-color: white;
+    width: min(350px, 90%);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form__title {
+    font-size: 2rem;
+    font-weight: 800;
+}
+.form__subtitle {
+    margin-top: .7rem;
+    color: var(--color-subtitle);
+}
+.form__inputs {
+    margin: 2rem 0 1.5rem;
+    display: grid;
+    gap: 1.5rem;
+    color: var(--color-text);
+}
+.form__label {
+    width: 100%;
+    display: grid; 
+    grid-template-areas: "input";
+}
+.form__input {
+    grid-area: input;
+
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #d7d0d0;
+    padding: .7rem 1.5rem;
+    color: var(--color-inputs);
+}
+.form__input:is(:focus, :not(:placeholder-shown)) + .form__text {
+    background-color: var(--blanco);
+    transform: translateY(-50%) scale(.7);
+}
+.form__text {
+    display: flex;
+    align-items: center;
+
+    grid-area: input;
+    
+    width: max-content;
+    height: 100%;
+    
+    margin-left: 1rem;
+    padding: 0 .5rem;
+ 
+    user-select: none;
+    transform-origin: left center;
+    transition: transform .3s;
+}
+.form__submit {
+    display: inline-block;
+    border-radius: 10px;
+    background-color: var(--color-submit);
+    padding: 1rem 2rem;
+    color: var(--blanco);
+    border: none;
+    transition: background-color .4s;
+}
+.form__submit:hover {
+    background-color: var(--color-submit-hover);
+    cursor: pointer;
+    transition: background-color .3s;
+}   
