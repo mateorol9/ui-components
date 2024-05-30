@@ -1,0 +1,78 @@
+*, 
+::after, 
+::before {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader-parent {
+    display: grid;
+    gap: 3rem;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    animation: escalar-elemento 2s infinite alternate;
+}
+
+@property --loader-1 {
+    syntax: '<transform-function>';
+    inherits: true;
+    initial-value: scale(0.5);
+}
+
+@property --loader-2 {
+    syntax: '<transform-function>';
+    inherits: true;
+    initial-value: scale(0.5);
+}
+@property --loader-3 {
+    syntax: '<transform-function>';
+    inherits: true;
+    initial-value: scale(0.5);
+}
+
+.loader {
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    background-color: #ff8157;
+}
+
+.loader-1 {
+    transform: var(--loader-1);
+}
+.loader-2 {
+    transform: var(--loader-2);
+}
+.loader-3 {
+    transform: var(--loader-3);
+}
+
+@keyframes escalar-elemento {
+    0%, 100% {
+        --loader-1: scale(0.5);
+        --loader-2: scale(0.5);
+        --loader-3: scale(0.5);
+    }
+    25% {
+        --loader-1: scale(1);
+        --loader-2: scale(0.5);
+        --loader-3: scale(0.5);
+    }
+    50% {
+        --loader-1: scale(1);
+        --loader-2: scale(1);
+        --loader-3: scale(0.5);
+    }
+    75% {
+        --loader-1: scale(1);
+        --loader-2: scale(1);
+        --loader-3: scale(1);
+    }
+}
