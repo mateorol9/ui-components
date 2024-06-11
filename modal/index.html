@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./estilos.css">
+    <title>Modal</title>
+</head>
+<body>
+    <button class="btn-open">Abril Modal</button>
+    <dialog class="dialog">
+        <img alt="" src="https://mktdigitale.com/wp-content/uploads/portadaDatalayer.svg" class="dialog__img">
+        <h2 class="dialog__title">¡Soy un elemento que se muestra dinamiecamente!</h2>
+        <button value="Cerrar" class="btn-close">X</button>
+    </dialog>
+    <script>
+        const modal = document.querySelector('.dialog');
+        const btnOpen = document.querySelector('.btn-open');
+        const btnClose = document.querySelector('.btn-close');
+
+        btnOpen.addEventListener('click', () => {
+            modal.showModal();
+        });
+
+        btnClose.addEventListener('click', () => {
+            modal.close();
+        });
+
+    </script>
+</body>
+</html>
